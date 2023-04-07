@@ -40,6 +40,7 @@ def main():
 
     stdscr.box()
     stdscr.addstr(0, 1, "PyClock")
+    stdscr.refresh()
     y, x = stdscr.getmaxyx()
     size = [x, y]
  
