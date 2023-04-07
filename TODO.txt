@@ -1,0 +1,6 @@
+-Make Clock function
+-Make Timer function
+-Make Counter function
+-Make Alarm function
+-Setup daemon for alarm function
+-Make the program installer
