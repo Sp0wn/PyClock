@@ -5,6 +5,7 @@ import curses           #UI Library
 
 from Clock import clock
 from Timer import timer
+from Counter import counter
 
 def main():
     #Initialize parser
@@ -56,7 +57,7 @@ def main():
         timer(args["time_unit"], args["time_value"], size)
 
     elif cmd == "Counter":
-        pass
+        counter(args["countdown"], size)
 
     elif cmd == "Alarm":
         pass
