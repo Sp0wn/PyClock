@@ -4,6 +4,7 @@ import argparse         #CLI Parser
 import curses           #UI Library
 
 from Clock import clock
+from Timer import timer
 
 def main():
     #Initialize parser
@@ -52,6 +53,12 @@ def main():
         clock(args["hour_format"], args["add_seconds"], size)
 
     elif cmd == "Timer":
+        timer(args["time_unit"], args["time_value"], size)
+
+    elif cmd == "Counter":
+        pass
+
+    elif cmd == "Alarm":
         pass
 
 if __name__ == "__main__":

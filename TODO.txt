@@ -1,4 +1,3 @@
--Make Timer function
 -Make Counter function
 -Make Alarm function
 -Add colors
