@@ -3,6 +3,8 @@
 import argparse         #CLI Parser
 import curses           #UI Library
 
+from Clock import clock
+
 def main():
     #Initialize parser
     parser = argparse.ArgumentParser(
