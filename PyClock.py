@@ -45,7 +45,14 @@ def main():
     stdscr.refresh()
     y, x = stdscr.getmaxyx()
     size = [x, y]
- 
+
+    if cmd == "Clock":
+        if args["hour_format"] == None:
+            args["hour_format"] = 12
+        clock(args["hour_format"], args["add_seconds"], size)
+
+    elif cmd == "Timer":
+        pass
 
 if __name__ == "__main__":
     main()

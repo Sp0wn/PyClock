@@ -1,5 +1,6 @@
 -Make Timer function
 -Make Counter function
 -Make Alarm function
+-Add colors
 -Setup daemon for alarm function
 -Make the program installer

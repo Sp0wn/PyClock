@@ -32,5 +32,7 @@ def convert_numbers(timeStr):
             continue
         #Converts number
         ascii_arr.append(cache[int(ch)])
+    
+    file.close()
 
     return ascii_arr
