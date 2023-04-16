@@ -1,2 +1,0 @@
--Setup daemon for alarm function
--Make the program installer
