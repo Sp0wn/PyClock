@@ -195,7 +195,7 @@ def alarm(windowSize, modifyAlarms):
                 
                 #Sets audio
                 if alarms[alarm]["audio"] == "Yes":
-                    notifier.audio = str(getenv("HOME")) + "/.config/PyClock_audio.wav"
+                    notifier.audio = str(getenv("HOME")) + "/.config/PyClock_sound.wav"
 
                 notifier.send()
 
