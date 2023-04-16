@@ -6,6 +6,7 @@ import curses           #UI Library
 from Clock import clock
 from Timer import timer
 from Counter import counter
+from Alarm import alarm
 
 def main():
     #Initialize parser
@@ -60,7 +61,7 @@ def main():
         counter(args["countdown"], size)
 
     elif cmd == "Alarm":
-        pass
+        alarm(size, args["modify_alarms"])
 
 if __name__ == "__main__":
     main()
