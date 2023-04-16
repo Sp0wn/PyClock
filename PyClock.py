@@ -43,9 +43,14 @@ def main():
     curses.start_color()
     curses.use_default_colors()
 
+    curses.init_pair(1, curses.COLOR_GREEN, -1)
+    curses.init_pair(2, curses.COLOR_BLUE, -1)
+
+    stdscr.attron(curses.color_pair(1))
     stdscr.box()
     stdscr.addstr(0, 1, "PyClock")
     stdscr.refresh()
+    stdscr.attroff(curses.color_pair(1))
     y, x = stdscr.getmaxyx()
     size = [x, y]
 

@@ -32,12 +32,15 @@ def alarm(windowSize, modifyAlarms):
     if modifyAlarms == True:
        while True:
             #Creates window box
+            AlarmWin.attron(curses.color_pair(1))
             AlarmWin.clear()
             AlarmWin.attroff(curses.A_STANDOUT)
             AlarmWin.box()
             AlarmWin.addstr(0, 1, "Alarm")
+            AlarmWin.attroff(curses.color_pair(1))
 
             #Sets options name
+            AlarmWin.attron(curses.color_pair(1))
             AlarmWin.attron(curses.A_STANDOUT)
             blank = " " * 44
             AlarmWin.addstr(1, 1, "Hour" + blank)
@@ -50,6 +53,7 @@ def alarm(windowSize, modifyAlarms):
             blank = " " * (windowSize[0] - 193 - 8)
             AlarmWin.addstr(1, 193, "Audio" + blank)
             AlarmWin.attroff(curses.A_STANDOUT)
+            AlarmWin.attroff(curses.color_pair(1))
 
             #Sets coordinates variables
             x = 1
@@ -67,9 +71,11 @@ def alarm(windowSize, modifyAlarms):
                         continue
                     #Highlight selected option
                     if (option_x == x) and (option_y == index+1):
+                        AlarmWin.attron(curses.color_pair(2))
                         AlarmWin.attron(curses.A_STANDOUT)
                     else:
                         AlarmWin.attroff(curses.A_STANDOUT)
+                        AlarmWin.attroff(curses.color_pair(2))
 
                     AlarmWin.addnstr(y, x, alarms[alarms_list[index]][attr], 47)
                     x = x + 48

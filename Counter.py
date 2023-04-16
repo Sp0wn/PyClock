@@ -18,9 +18,11 @@ def counter(countdownSeconds, windowSize):
         countdown = int(countdownFormat.total_seconds())
         while countdown >= 0:
             #Creates window box
+            CounterWin.attron(curses.color_pair(1))
             CounterWin.clear()
             CounterWin.box()
             CounterWin.addstr(0, 1, "Counter")
+            CounterWin.attroff(curses.color_pair(1))
 
             #Adds zero at the start of the string
             countdownFormat = str(countdownFormat)
@@ -34,6 +36,7 @@ def counter(countdownSeconds, windowSize):
             #Get the ascii art array
             asciiNumbers = convert_numbers(countdownFormat)
             #Loop through the array of arrays
+            CounterWin.attron(curses.color_pair(2))
             for arr in asciiNumbers:
                 for line in arr:
                     CounterWin.addstr(y, x, line)
@@ -45,6 +48,7 @@ def counter(countdownSeconds, windowSize):
             countdown = countdown - 1
             countdownFormat = timedelta(seconds=countdown)
 
+            CounterWin.attroff(curses.color_pair(2))
             CounterWin.refresh()
 
             #Checks for esc key
@@ -60,9 +64,11 @@ def counter(countdownSeconds, windowSize):
     #Loops through time
     while True:
         #Creates window box
+        CounterWin.attron(curses.color_pair(1))
         CounterWin.clear()
         CounterWin.box()
         CounterWin.addstr(0, 1, "Counter")
+        CounterWin.attroff(curses.color_pair(1))
    
         #Adds zero at the start of the string
         counterFormat = str(counterFormat)
@@ -76,6 +82,7 @@ def counter(countdownSeconds, windowSize):
         #Get the ascii art array
         asciiNumbers = convert_numbers(counterFormat)
         #Loop through the array of arrays
+        CounterWin.attron(curses.color_pair(2))
         for arr in asciiNumbers:
             for line in arr:
                 CounterWin.addstr(y, x, line)
@@ -87,6 +94,7 @@ def counter(countdownSeconds, windowSize):
         counter_n = counter_n + 1
         counterFormat = timedelta(seconds=counter_n)
 
+        CounterWin.attroff(curses.color_pair(2))
         CounterWin.refresh()
     
         #Checks for esc key

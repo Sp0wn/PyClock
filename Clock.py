@@ -31,9 +31,11 @@ def clock(hourFormat, secondsTrue, windowSize):
             time = datetime.now().strftime("%H:%M:%S")
 
         #Creates window box
+        ClockWin.attron(curses.color_pair(1))
         ClockWin.clear()
         ClockWin.box()
         ClockWin.addstr(0, 1, "Clock")
+        ClockWin.attroff(curses.color_pair(1))
  
         #Sets coordinates variables
         x = 1
@@ -46,6 +48,7 @@ def clock(hourFormat, secondsTrue, windowSize):
         #Get the ascii art array
         asciiNumbers = convert_numbers(time)
         #Loops through the array of arrays
+        ClockWin.attron(curses.color_pair(2))
         for arr in asciiNumbers:
             for line in arr:
                 ClockWin.addstr(y, x, line)
@@ -53,6 +56,7 @@ def clock(hourFormat, secondsTrue, windowSize):
             x = x + 8
             y = 1
 
+        ClockWin.attroff(curses.color_pair(2))
         ClockWin.refresh()
 
         #Check for esc key

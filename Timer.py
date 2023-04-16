@@ -38,9 +38,11 @@ def timer(timeUnits, timeValues, windowSize):
     #Loops through the timer
     while time_left >= 0:
         #Creates window box
+        TimerWin.attron(curses.color_pair(1))
         TimerWin.clear()
         TimerWin.box()
         TimerWin.addstr(0, 1, "Timer")
+        TimerWin.attroff(curses.color_pair(1))
    
         #Adds zero at the start of the string
         time = str(time)
@@ -54,6 +56,7 @@ def timer(timeUnits, timeValues, windowSize):
         #Get the ascii art array
         asciiNumbers = convert_numbers(time)
         #Loop through the array of arrays
+        TimerWin.attron(curses.color_pair(2))
         for arr in asciiNumbers:
             for line in arr:
                 TimerWin.addstr(y, x, line)
@@ -65,6 +68,7 @@ def timer(timeUnits, timeValues, windowSize):
         time_left = time_left - 1
         time = timedelta(seconds=time_left)
 
+        TimerWin.attroff(curses.color_pair(2))
         TimerWin.refresh()
     
         #Checks for esc key
